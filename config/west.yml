@@ -11,18 +11,20 @@ manifest:
       revision: v0.3
       import: app/west.yml
 
-    - name: zmk-rgbled-widget
-      url: https://github.com/t-ogura/zmk-rgbled-widget
-      revision: main
-      path: zmk-rgbled-widget
-
     # ZMK modules
     - name: zmk-smart-toggle
       remote: caksoylar
       revision: v0.3
-#    - name: zmk-rgbled-widget
-#      remote: caksoylar
-#      revision: main
+
+    - name: zmk
+      remote: caksoylar
+      revision: main
+      path: zmk
+
+    - name: zmk-rgbled-widget
+      url: https://github.com/t-ogura/zmk-rgbled-widget
+      revision: main
+      path: zmk-rgbled-widget
 
   self:
     path: config
