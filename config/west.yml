@@ -6,21 +6,18 @@ manifest:
       url-base: https://github.com/caksoylar
 
   projects:
+    # ZMK 本体（v0.3）
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
 
-    # ZMK modules
-    - name: zmk-smart-toggle
-      remote: caksoylar
-      revision: v0.3
+    # 必要なら残す（あなたの環境に合わせて）
+#    - name: zmk-smart-toggle
+#      remote: caksoylar
+#      revision: v0.3
 
-    - name: zmk
-      remote: caksoylar
-      revision: main
-      path: zmk
-
+    # RGBLED widget（今回追加）
     - name: zmk-rgbled-widget
       url: https://github.com/t-ogura/zmk-rgbled-widget
       revision: main
