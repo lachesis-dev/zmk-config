@@ -12,10 +12,9 @@ manifest:
       revision: v0.3
       import: app/west.yml
 
-    # 必要なら残す（あなたの環境に合わせて）
-#    - name: zmk-smart-toggle
-#      remote: caksoylar
-#      revision: v0.3
+    - name: zmk-smart-toggle
+      remote: caksoylar
+      revision: v0.3
 
     # RGBLED widget（今回追加）
     - name: zmk-rgbled-widget
