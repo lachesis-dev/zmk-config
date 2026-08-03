@@ -21,7 +21,6 @@ manifest:
     - name: zmk-rgbled-widget
       url: https://github.com/t-ogura/zmk-rgbled-widget
       revision: main
-      path: zmk-rgbled-widget
 
   self:
     path: config

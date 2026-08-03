@@ -5,17 +5,13 @@ include:
   - board: xiao_ble
     shield: totem_left
     artifact-name: totem_central_left
-    cmake-args: >-
-      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
-      -DZMK_EXTRA_MODULES="zmk-rgbled-widget"
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
 
   # totem right (peripheral)
   - board: xiao_ble
     shield: totem_right
     artifact-name: totem_peripheral_right
-    cmake-args: >-
-      -DZMK_EXTRA_MODULES="zmk-rgbled-widget"
-
+ 
   # reset
   - board: xiao_ble
     shield: settings_reset
