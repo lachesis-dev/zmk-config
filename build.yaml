@@ -21,3 +21,6 @@ include:
   - board: xiao_ble
     shield: settings_reset
  
+  - board: xiao_ble
+    shield: hummingbird
+#    shield: rgbled_adapter
