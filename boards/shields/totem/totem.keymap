@@ -41,10 +41,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // ─────────────────────────────
-        // BASE（jurf 60% Miryoku　Base）
-        // ─────────────────────────────
-
         base_layer {
             display-name = "BASE";
             bindings = <
