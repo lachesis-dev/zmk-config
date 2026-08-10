@@ -30,3 +30,6 @@
          , <&xiao_d 8 GPIO_ACTIVE_HIGH>
          ;
  };
+ zephyr_udc0: &usbd {
+    status = "okay";
+};
