@@ -1,4 +1,7 @@
 / {
+    chosen {
+        zmk,kscan = &kscan;
+    };
     aliases {
         led-red = &led0;
         led-green = &led1;
@@ -20,3 +23,8 @@
         };
     };
 };
+
+kscan: kscan {
+    compatible = "zmk,kscan-none";
+};
+
