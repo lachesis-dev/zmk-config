@@ -1,20 +1,20 @@
-# This file generates the GitHub Actions matrix
----
 include:
+  # totem dongle (central)
+  - board: xiao_ble
+    shield: totem_dongle
+    artifact-name: totem_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
   # totem left (peripheral)
   - board: xiao_ble
     shield: totem_left
-    artifact-name: totem_central_left
+    artifact-name: totem_left
 
   # totem right (peripheral)
   - board: xiao_ble
     shield: totem_right
-    artifact-name: totem_peripheral_right
-
-  # totem dongle (central)
-  #- board: xiao_ble
-  #  shield: totem_dongle
-  #  artifact-name: totem_central_dongle
+    artifact-name: totem_right
 
   # reset
   - board: xiao_ble
