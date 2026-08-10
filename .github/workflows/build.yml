@@ -3,14 +3,15 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - config/west.yml
-      - config/*.keymap
-      - config/*.conf
-      - config/includes/*.dtsi
-      - boards/shields/totem/*.conf
-      - boards/shields/totem/*.overlay
-      - boards/shields/totem/*
-      - build.yaml
+    - config/west.yml
+    - config/*.keymap
+    - config/*.conf
+    - config/includes/*.dtsi
+    - boards/shields/totem/*.conf
+    - boards/shields/totem/*.overlay
+    - boards/shields/totem/*.dts
+    - boards/shields/totem/*.dtsi
+    - build.yaml
 
 jobs:
   build:
