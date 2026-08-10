@@ -2,10 +2,10 @@
     chosen {
         zmk,kscan = &kscan;
     };
-   
+    kscan: kscan {
+        compatible = "zmk,kscan-none";
+    };
 };
 
-kscan: kscan {
-    compatible = "zmk,kscan-none";
-};
+
 
