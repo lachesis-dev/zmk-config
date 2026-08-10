@@ -25,6 +25,10 @@ if SHIELD_TOTEM_DONGLE
     # Dongle name
     config ZMK_KEYBOARD_NAME
         default "Totem Dongle"
+    
+    config ZMK_USB
+        default y
+    
 endif
 
 # Left / Right = Peripheral
