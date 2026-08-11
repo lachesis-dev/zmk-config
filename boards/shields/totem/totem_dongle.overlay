@@ -3,13 +3,20 @@
 &kscan0 {
     status = "disabled";
 };
+
 zephyr_udc0: &usbd {
     status = "okay";
 };
 
+&kscan0 {
+    /delete-property/ row-gpios;
+    columns = <0>;
+    rows = <0>;
+    events = <0>;
+};
 / {
     chosen {
-        zmk,kscan = &mock_kscan;
+        zmk,kscan = &kscan;
         zmk,matrix-transform = <0>;
     };
 
