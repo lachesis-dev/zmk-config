@@ -7,13 +7,8 @@ zephyr_udc0: &usbd {
 
 / {
     chosen {
-        /* 1. キースキャンはピンを使わないダミーを強制指定 */
         zmk,kscan = &mock_kscan;
-        
-        /* 2. マトリクス変換はdtsiにあるものをそのまま利用 */
         zmk,matrix-transform = &default_transform;
-
-        /* 3. ZMK Studio用の物理レイアウトもdtsiにあるものを指定 */
         zmk,physical-layout = &default_layout;
     };
 
@@ -41,12 +36,10 @@ zephyr_udc0: &usbd {
     };
 };
 
-/* 💡重要：dtsiで定義されている本物のkscan0をドングル側では「無効化」する */
 &kscan0 {
     status = "disabled";
 };
 
-/* 💡重要：default_layoutが本物のkscan0を参照してエラーになるのを防ぐため、ダミー側を参照させる */
 &default_layout {
     kscan = <&mock_kscan>;
 };
