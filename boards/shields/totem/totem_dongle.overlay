@@ -1,10 +1,23 @@
- #include "totem.dtsi"
+#include "totem.dtsi"
+
+/* USBコントローラーの有効化 */
+zephyr_udc0: &usbd {
+    status = "okay";
+};
 
 / {
     chosen {
+        /* 1. キースキャンはピンを使わないダミーを強制指定 */
         zmk,kscan = &mock_kscan;
-        zephyr,udc0 = &usbd;
+        
+        /* 2. マトリクス変換はdtsiにあるものをそのまま利用 */
+        zmk,matrix-transform = &default_transform;
+
+        /* 3. ZMK Studio用の物理レイアウトもdtsiにあるものを指定 */
+        zmk,physical-layout = &default_layout;
     };
+
+    /* 物理キーなしでビルドを通すためのダミースキャン */
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -12,6 +25,7 @@
         events = <0>;
     };
 
+    /* XIAO BLEの内蔵RGB LEDの定義 */
     aliases {
         led-red = &led0;
         led-green = &led1;
@@ -21,24 +35,18 @@
     leds {
         compatible = "gpio-leds";
         status = "okay";
-
-        led0: led_0 {
-            gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
-        };
-        led1: led_1 {
-            gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;
-        };
-        led2: led_2 {
-            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-        };
+        led0: led_0 { gpios = <&gpio0 26 GPIO_ACTIVE_LOW>; };
+        led1: led_1 { gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; };
+        led2: led_2 { gpios = <&gpio0 6 GPIO_ACTIVE_LOW>; };
     };
 };
- &kscan0 {
-     col-gpios
-         = <&xiao_d 4 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 5 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 10 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-         ;
- };
+
+/* 💡重要：dtsiで定義されている本物のkscan0をドングル側では「無効化」する */
+&kscan0 {
+    status = "disabled";
+};
+
+/* 💡重要：default_layoutが本物のkscan0を参照してエラーになるのを防ぐため、ダミー側を参照させる */
+&default_layout {
+    kscan = <&mock_kscan>;
+};
