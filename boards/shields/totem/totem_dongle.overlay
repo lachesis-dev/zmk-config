@@ -16,7 +16,7 @@ zephyr_udc0: &usbd {
 };
 / {
     chosen {
-        zmk,kscan = &kscan;
+        zmk,kscan = &kscan0;
         zmk,matrix-transform = <0>;
     };
 
