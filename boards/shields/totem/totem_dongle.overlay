@@ -1,18 +1,15 @@
  #include "totem.dtsi"
 
-&kscan0 {
-    status = "disabled";
-};
-
 zephyr_udc0: &usbd {
     status = "okay";
 };
 
 &kscan0 {
     /delete-property/ row-gpios;
-    columns = <0>;
-    rows = <0>;
-    events = <0>;
+    /delete-property/ col-gpios;
+};
+&default_layout {
+    kscan = <&kscan0>;
 };
 / {
     chosen {
