@@ -1,10 +1,3 @@
-# ============================================================
-# Totem Shield — Optimized Kconfig.defconfig
-# Central = dongle only
-# Left / Right = peripheral
-# ============================================================
-
-# Enable split + BLE for all Totem shields
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT || SHIELD_TOTEM_DONGLE
     config ZMK_SPLIT
         default y
@@ -13,11 +6,6 @@ if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT || SHIELD_TOTEM_DONGLE
         default y
 endif
 
-# ------------------------------------------------------------
-# Central role assignment
-# ------------------------------------------------------------
-
-# Dongle = Central
 if SHIELD_TOTEM_DONGLE
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
@@ -31,7 +19,6 @@ if SHIELD_TOTEM_DONGLE
 
 endif
 
-# Left / Right = Peripheral
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
     config ZMK_SPLIT_ROLE_CENTRAL
         default n

@@ -1,12 +1,9 @@
  #include "totem.dtsi"
 
-zephyr_udc0: &usbd {
-    status = "okay";
-};
-
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zephyr,udc0 = &usbd;
     };
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
