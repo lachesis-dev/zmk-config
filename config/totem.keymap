@@ -51,7 +51,6 @@
         // ─────────────────────────────
         // BASE（jurf 60% Miryoku　Base）
         // ─────────────────────────────
-
         base_layer {
             display-name = "BASE";
             bindings = <
@@ -114,18 +113,18 @@
 
         lmod_layer {
             bindings = <
-           &kp Q         &kp W           &kp E     &kp R      &kp T        &kp Y    &kp U   &kp I      &kp O       &kp P
-           &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LALT  &kp LCTRL  &kp G        &kp H    &kp J   &kp K      &kp L       &kp MINUS
-&kp LSHFT  &kp Z         &kp X           &kp C     &kp V      &kp B        &kp N    &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &kp RSHFT
-                                         &none     &trans     &kp SPACE    &kp RET  &trans  &none
+           &kp Q         &kp W           &kp E          &kp R      &kp T        &kp Y    &kp U   &kp I      &kp O       &kp P
+           &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LALT       &kp LCTRL  &kp G        &kp H    &kp J   &kp K      &kp L       &kp MINUS
+&kp LSHFT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp RIGHT_ALT  &kp LCTRL  &kp B        &kp N    &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &kp RSHFT
+                                         &none          &trans     &kp SPACE    &kp RET  &trans  &none
             >;
         };
 
         rmod_layer {
             bindings = <
-           &kp Q  &kp W  &kp E  &kp R   &kp T        &kp Y    &kp U      &kp I          &kp O       &kp P
-           &kp A  &kp S  &kp D  &kp F   &kp G        &kp H    &kp RCTRL  &kp RIGHT_ALT  &kp RSHFT   &kp RIGHT_GUI
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V   &kp B        &kp N    &kp M      &kp COMMA      &kp PERIOD  &kp SLASH      &kp RSHFT
+           &kp Q  &kp W  &kp E  &kp R   &kp T        &kp Y    &kp U      &kp I          &kp O      &kp P
+           &kp A  &kp S  &kp D  &kp F   &kp G        &kp H    &kp RCTRL  &kp RIGHT_ALT  &kp RSHFT  &kp RIGHT_GUI
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V   &kp B        &kp N    &kp RCTRL  &kp RIGHT_ALT  &kp RSHFT  &kp RIGHT_GUI  &kp RSHFT
                          &none  &trans  &kp SPACE    &kp RET  &trans     &none
             >;
         };
