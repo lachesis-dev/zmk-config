@@ -1,10 +1,18 @@
  #include "totem.dtsi"
 
+&kscan0 {
+    status = "disabled";
+};
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zephyr,udc0 = &usbd;
+        zmk,matrix-transform = <0>;
     };
+
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -33,12 +41,3 @@
         };
     };
 };
- &kscan0 {
-     col-gpios
-         = <&xiao_d 4 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 5 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 10 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-         ;
- };
