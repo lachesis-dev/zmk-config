@@ -1,22 +1,50 @@
-if SHIELD_TOTEM_DONGLE
+# ============================================================
+# Totem Shield — Optimized Kconfig.defconfig
+# Central = dongle only
+# Left / Right = peripheral
+# ============================================================
 
-config ZMK_SPLIT
-    default y
+# Enable split + BLE for all Totem shields
+if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT || SHIELD_TOTEM_DONGLE
+    config ZMK_SPLIT
+        default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-config ZMK_KEYBOARD_NAME
-    default "Totem Dongle"
-
-config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 2
-
+    config ZMK_BLE
+        default y
 endif
 
+# ------------------------------------------------------------
+# Central role assignment
+# ------------------------------------------------------------
+
+# Dongle = Central
+if SHIELD_TOTEM_DONGLE
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+
+    # Dongle name
+    config ZMK_KEYBOARD_NAME
+        default "Totem Dongle"
+    
+    config ZMK_USB
+        default y
+    
+endif
+
+# Left / Right = Peripheral
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default n
 
-config ZMK_SPLIT
-    default y
+    # Peripheral name (optional)
+    config ZMK_KEYBOARD_NAME
+        default "Totem"
+endif
 
+# ------------------------------------------------------------
+# Dongle BLE capacity (2 peripherals)
+# ------------------------------------------------------------
+if SHIELD_TOTEM_DONGLE
+    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+        default 2
 endif
