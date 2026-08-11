@@ -4,19 +4,17 @@ zephyr_udc0: &usbd {
     status = "okay";
 };
 
-&physical_layout0 {
-    transform = <&default_transform>;
+// 2. 共通ファイルで作られた古い空のkscan0は邪魔なので、ドングル側では完全に無効化する
+&kscan0 {
+    status = "disabled";
 };
 
 / {
-    chosen {
-        zmk,kscan = &mock_kscan;
-    };
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
+        columns = <10>;
+        rows = <4>;
+        events = <>;
     };
 
     aliases {
@@ -28,16 +26,13 @@ zephyr_udc0: &usbd {
     leds {
         compatible = "gpio-leds";
         status = "okay";
-
-        led0: led_0 {
-            gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
-        };
-        led1: led_1 {
-            gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;
-        };
-        led2: led_2 {
-            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-        };
+        led0: led_0 { gpios = <&gpio0 26 GPIO_ACTIVE_LOW>; };
+        led1: led_1 { gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; };
+        led2: led_2 { gpios = <&gpio0 6 GPIO_ACTIVE_LOW>; };
     };
+};
 
+&physical_layout0 {
+    transform = <&default_transform>;
+    kscan = <&mock_kscan>;
 };
