@@ -1,29 +1,17 @@
- #include "totem.dtsi"
+#include "totem.dtsi"
 
 zephyr_udc0: &usbd {
     status = "okay";
 };
 
-&kscan0 {
-     col-gpios
-         = <&xiao_d 4 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 5 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 10 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-         , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-         ;
-};
-
-&default_layout {
-    kscan = <&kscan0>;
+&physical_layout0 {
+    transform = <&default_transform>;
 };
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix-transform = <0>;
+        zmk,kscan = &mock_kscan;
     };
-
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -51,4 +39,5 @@ zephyr_udc0: &usbd {
             gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
         };
     };
+
 };
