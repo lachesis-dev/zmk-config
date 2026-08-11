@@ -4,11 +4,6 @@ zephyr_udc0: &usbd {
     status = "okay";
 };
 
-// 2. 共通ファイルで作られた古い空のkscan0は邪魔なので、ドングル側では完全に無効化する
-&kscan0 {
-    status = "disabled";
-};
-
 / {
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
