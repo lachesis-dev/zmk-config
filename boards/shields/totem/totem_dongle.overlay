@@ -1,19 +1,10 @@
-// totem_dongle.overlay
-
 #include "totem.dtsi"
 
-// 1. ZMK 0.3最新コアの必須条件（BUILD_ASSERT回避）を満たすための唯一の上書き
-&physical_layout0 {
-    transform = <&default_transform>;
-};
-
 / {
-    // 2. 過去の chosen 内の不要な transform は完全に排除
     chosen {
         zmk,kscan = &mock_kscan;
     };
 
-    // 3. 過去にコンパイルが通った実績のある、0行0列の純粋なレシーバー専用mock
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -26,4 +17,8 @@
         led-green = &led1;
         led-blue = &led2;
     };
+};
+
+&physical_layout0 {
+    transform = <&default_transform>;
 };
