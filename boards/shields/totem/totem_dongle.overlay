@@ -1,5 +1,4 @@
 #include "totem.dtsi"
-
 / {
     chosen {
         zmk,kscan = &mock_kscan;
