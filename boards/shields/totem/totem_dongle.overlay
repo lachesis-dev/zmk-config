@@ -1,10 +1,19 @@
+// totem_dongle.overlay
+
 #include "totem.dtsi"
 
+// 1. ZMK 0.3最新コアの必須条件（BUILD_ASSERT回避）を満たすための唯一の上書き
+&physical_layout0 {
+    transform = <&default_transform>;
+};
+
 / {
+    // 2. 過去の chosen 内の不要な transform は完全に排除
     chosen {
         zmk,kscan = &mock_kscan;
     };
 
+    // 3. 過去にコンパイルが通った実績のある、0行0列の純粋なレシーバー専用mock
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -12,21 +21,6 @@
         events = <0>;
     };
 
-    aliases {
-        led-red = &led0;
-        led-green = &led1;
-        led-blue = &led2;
-    };
-
-    leds {
-        compatible = "gpio-leds";
-        status = "okay";
-        led0: led_0 { gpios = <&gpio0 26 GPIO_ACTIVE_LOW>; };
-        led1: led_1 { gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; };
-        led2: led_2 { gpios = <&gpio0 6 GPIO_ACTIVE_LOW>; };
-    };
-};
-
-&physical_layout0 {
-    transform = <&default_transform>;
+    // ★干渉源であった aliases および leds ノードは1文字残らず完全削除（引き算）しました。
+    // ボード（xiao_ble）側の標準LED定義にすべてを委ねることで、HID初期化への干渉を根絶します。
 };
