@@ -7,7 +7,7 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # totem left (peripheral)
-  - board:xiao_ble/nrf52840/zmk
+  - board: xiao_ble/nrf52840/zmk
     shield: totem_left
     artifact-name: totem_peripheral_left
 
