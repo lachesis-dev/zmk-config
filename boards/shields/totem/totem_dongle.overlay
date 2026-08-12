@@ -21,6 +21,9 @@
         events = <0>;
     };
 
-    // ★干渉源であった aliases および leds ノードは1文字残らず完全削除（引き算）しました。
-    // ボード（xiao_ble）側の標準LED定義にすべてを委ねることで、HID初期化への干渉を根絶します。
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
 };
