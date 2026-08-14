@@ -43,6 +43,59 @@
             timeout-ms = <20>;
             layers = <1>;
         };
+
+        zaq {
+            bindings = <&zaq_macro>;
+            key-positions = <0 1>;
+            layers = <2>;
+        };
+
+        ndq {
+            bindings = <&ndq_id_macro>;
+            key-positions = <1 2>;
+            layers = <2>;
+        };
+
+        pc {
+            bindings = <&PC_macro>;
+            key-positions = <2 3>;
+            layers = <2>;
+        };
+
+        kakko_start {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <7 6>;
+            layers = <1>;
+        };
+
+        kakko_end {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <7 8>;
+            layers = <1>;
+        };
+    };
+
+    macros {
+        zaq_macro: zaq_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp A &kp Q &kp N1 &kp DQT &kp LS(W) &kp LS(S) &kp LS(X)>;
+            label = "ZAQ_MACRO";
+        };
+
+        ndq_id_macro: nsq_id_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N4 &kp N4 &kp N5 &kp N6 &kp N3 &kp N6 &kp N0>;
+            label = "NSQ_ID_MACRO";
+        };
+
+        PC_macro: PC_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp A &kp S &kp D &kp F &kp SEMI &kp L &kp K &kp J>;
+            label = "PC_MACRO";
+        };
     };
 
     keymap {
@@ -51,6 +104,7 @@
         // ─────────────────────────────
         // BASE（jurf 60% Miryoku　Base）
         // ─────────────────────────────
+
         base_layer {
             display-name = "BASE";
             bindings = <
@@ -64,40 +118,40 @@
         num_layer {
             display-name = "NUM";
             bindings = <
-           &none  &none           &none           &none            &none        &kp SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
-           &none  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &none        &kp ASTERISK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
-&kp LSHFT  &none  &none           &kp DOWN_ARROW  &none            &none        &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &tog 1        &kp RSHFT
-                                  &none           &kp TAB          &kp SPACE    &kp KP_ENTER  &none      &none
+           &none         &none           &kp UP_ARROW    &none            &none        &kp SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
+           &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none        &kp ASTERISK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
+&kp LSHFT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT    &kp LCTRL        &none        &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &tog 1        &kp RSHFT
+                                         &none           &kp TAB          &kp SPACE    &kp KP_ENTER  &none      &none
             >;
         };
 
         lower_layer {
             display-name = "lower";
             bindings = <
-           &kp EXCL      &kp DOUBLE_QUOTES  &kp HASH       &kp DLLR    &kp PRCNT          &kp AMPERSAND  &kp SQT           &kp MINUS  &kp LCTRL     &kp BACKSLASH
-           &kp CAPSLOCK  &kp TAB            &kp BACKSPACE  &kp ESCAPE  &kp DELETE         &kp QUESTION   &kp EQUAL         &kp PLUS   &kp ASTERISK  &kp AT_SIGN
-&kp LSHFT  &kp LWIN      &kp LSHFT          &kp LEFT_ALT   &kp LCTRL   &kp PRINTSCREEN    &kp LESS_THAN  &kp GREATER_THAN  &kp GRAVE  &kp SLASH     &kp UNDERSCORE  &kp RSHFT
-                                            &mo 4          &trans      &lt 8 LC(SPACE)    &kp ENTER      &lt 7 INT_HENKAN  &mo 5
+           &none         &none      &none          &none       &none              &kp C_AL_SCREENSAVER   &kp PAUSE_BREAK   &kp MINUS         &kp EQUAL          &none
+           &kp CAPSLOCK  &kp TAB    &kp BACKSPACE  &kp ESCAPE  &kp DELETE         &kp SCROLLLOCK         &none             &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
+&kp LSHFT  &kp LWIN      &kp LSHFT  &kp LEFT_ALT   &kp LCTRL   &kp PRINTSCREEN    &none                  &none             &kp SEMICOLON     &kp SQT            &kp BACKSLASH  &kp RSHFT
+                                    &mo 4          &trans      &lt 8 LC(SPACE)    &mt RIGHT_SHIFT ENTER  &lt 7 INT_HENKAN  &mo 5
             >;
         };
 
         raise_layer {
             display-name = "raise";
             bindings = <
-           &kp NUMBER_1  &kp NUMBER_2       &kp NUMBER_3  &kp NUMBER_4        &kp NUMBER_5        &kp NUMBER_6       &kp NUMBER_7      &kp NUMBER_8  &kp NUMBER_9   &kp NUMBER_0
-           &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp LESS_THAN       &kp LBRC            &kp RBRC           &kp GREATER_THAN  &kp EQUAL     &kp SEMICOLON  &kp COLON
-&kp LSHFT  &trans        &trans             &trans        &trans              &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RCTRL         &kp RALT      &kp RSHFT      &kp RIGHT_GUI  &kp RSHFT
-                                            &mo 4         &lt 6 INT_MUHENKAN  &kp SPACE           &lt 8 ENTER        &trans            &mo 5
+           &kp NUMBER_1  &kp NUMBER_2       &kp NUMBER_3  &kp NUMBER_4        &kp NUMBER_5     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+           &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp K_PREV          &kp K_STOP       &kp K_PP      &kp K_NEXT    &none         &none         &none
+&kp LSHFT  &trans        &trans             &trans        &trans              &kp LC(LS(O))    &none         &kp RCTRL     &kp RALT      &kp RSHFT     &kp RIGHT_GUI  &kp RSHFT
+                                            &mo 4         &lt 6 INT_MUHENKAN  &kp SPACE        &lt 8 ENTER   &trans        &mo 5
             >;
         };
 
         func_layer {
             display-name = "func";
             bindings = <
-           &none         &none           &none         &none      &none        &none          &kp F7  &kp F8  &kp F9  &none
-           &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &none        &kp PAGE_UP    &kp F4  &kp F5  &kp F6  &tog 1
-&kp LSHFT  &none         &kp F10         &kp F11       &kp F12    &mo 8        &kp PAGE_DOWN  &kp F1  &kp F2  &kp F3  &trans  &kp RSHFT
-                                         &trans        &none      &kp SPACE    &kp ENTER      &none   &mo 5
+           &none         &none           &none         &none      &none        &none                  &kp F7  &kp F8  &kp F9  &none
+           &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &none        &kp PAGE_UP            &kp F4  &kp F5  &kp F6  &tog 1
+&kp LSHFT  &none         &kp F10         &kp F11       &kp F12    &mo 8        &kp PAGE_DOWN          &kp F1  &kp F2  &kp F3  &trans  &kp RSHFT
+                                         &trans        &none      &kp SPACE    &mt RIGHT_SHIFT ENTER  &none   &mo 5
             >;
         };
 
