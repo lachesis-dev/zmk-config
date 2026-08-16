@@ -141,7 +141,7 @@
             display-name = "lower";
             bindings = <
            &none         &none      &none          &none       &none              &kp C_AL_SCREENSAVER   &kp PAUSE_BREAK   &kp MINUS         &kp EQUAL          &none
-           &kp CAPSLOCK  &kp TAB    &kp BACKSPACE  &kp ESCAPE  &kp DELETE         &kp SCROLLLOCK         &none             &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
+           &kp CAPSLOCK  &kp TAB    &kp BACKSPACE  &kp ESCAPE  &kp DELETE         &kp SCROLLLOCK         &kp GRAVE         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
 &kp LSHFT  &kp LWIN      &kp LSHFT  &kp LEFT_ALT   &kp LCTRL   &kp PRINTSCREEN    &none                  &none             &kp SEMICOLON     &kp SQT            &kp BACKSLASH  &kp RSHFT
                                     &mo 4          &trans      &lt 8 LC(SPACE)    &mt RIGHT_SHIFT ENTER  &lt 7 INT_HENKAN  &mo 5
             >;
@@ -150,10 +150,10 @@
         raise_layer {
             display-name = "raise";
             bindings = <
-           &kp NUMBER_1  &kp NUMBER_2       &kp NUMBER_3  &kp NUMBER_4        &kp NUMBER_5     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-           &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp K_PREV          &kp K_STOP       &kp K_PP      &kp K_NEXT    &none         &none         &none
-&kp LSHFT  &trans        &trans             &trans        &trans              &kp LC(LS(O))    &none         &kp RCTRL     &kp RALT      &kp RSHFT     &kp RIGHT_GUI  &kp RSHFT
-                                            &mo 4         &lt 6 INT_MUHENKAN  &kp SPACE        &lt 8 ENTER   &trans        &mo 5
+           &kp NUMBER_1  &kp NUMBER_2       &kp NUMBER_3   &kp NUMBER_4        &kp NUMBER_5     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+           &kp K_MUTE    &kp C_VOLUME_DOWN  &kp C_VOL_UP   &kp K_PREV          &kp K_STOP       &kp K_PP      &kp K_NEXT    &none         &none         &none
+&kp LSHFT  &kp LMETA     &kp LSHFT          &kp RIGHT_ALT  &kp LCTRL           &kp LC(LS(O))    &none         &kp RCTRL     &kp RALT      &kp RSHFT     &kp RIGHT_GUI  &kp RSHFT
+                                            &mo 4          &lt 6 INT_MUHENKAN  &kp SPACE        &lt 8 ENTER   &trans        &mo 5
             >;
         };
 
@@ -170,7 +170,7 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-           &kp ESCAPE    &mkp LCLK       &mkp MCLK     &mkp RCLK  &kp C_AC_HOME    &mkp MCLK        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP
+           &kp ESCAPE    &mkp LCLK       &mkp MCLK     &mkp RCLK  &kp HOME         &mkp MCLK        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP
            &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp END          &msc SCRL_LEFT   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN
 &kp LSHFT  &none         &none           &kp INSERT    &kp PG_UP  &kp PAGE_DOWN    &msc SCRL_RIGHT  &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &kp RSHFT
                                          &none         &none      &none            &none            &none           &trans
