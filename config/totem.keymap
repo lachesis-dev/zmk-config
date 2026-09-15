@@ -32,7 +32,7 @@
         };
 
         ZenHan {
-            bindings = <&kp LA(SPACE)>;
+            bindings = <&kp LC(SPACE)>;
             key-positions = <12 13>;
             timeout-ms = <50>;
         };
@@ -77,6 +77,7 @@
         sysop {
             bindings = <&sysop_macro>;
             key-positions = <1 3>;
+            layers = <2>;
         };
     };
 
@@ -140,8 +141,8 @@
         lower_layer {
             display-name = "lower";
             bindings = <
-           &none         &none      &none          &none       &none              &kp C_AL_SCREENSAVER   &kp PAUSE_BREAK   &kp MINUS         &kp EQUAL          &none
-           &kp CAPSLOCK  &kp TAB    &kp BACKSPACE  &kp ESCAPE  &kp DELETE         &kp SCROLLLOCK         &kp GRAVE         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
+           &kp CAPSLOCK  &none      &none          &kp INSERT  &none              &kp C_AL_SCREENSAVER   &kp PAUSE_BREAK   &kp MINUS         &kp EQUAL          &none
+           &none         &kp TAB    &kp BACKSPACE  &kp ESCAPE  &kp DELETE         &kp SCROLLLOCK         &kp GRAVE         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
 &kp LSHFT  &kp LWIN      &kp LSHFT  &kp LEFT_ALT   &kp LCTRL   &kp PRINTSCREEN    &none                  &none             &kp SEMICOLON     &kp SQT            &kp BACKSLASH  &kp RSHFT
                                     &mo 4          &trans      &lt 8 LC(SPACE)    &mt RIGHT_SHIFT ENTER  &lt 7 INT_HENKAN  &mo 5
             >;
@@ -160,9 +161,9 @@
         func_layer {
             display-name = "func";
             bindings = <
-           &none         &none           &none         &none      &none        &none                  &kp F7  &kp F8  &kp F9  &none
+           &none         &kp F10         &kp F11       &kp F12    &none        &none                  &kp F7  &kp F8  &kp F9  &none
            &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &none        &kp PAGE_UP            &kp F4  &kp F5  &kp F6  &tog 1
-&kp LSHFT  &none         &kp F10         &kp F11       &kp F12    &mo 8        &kp PAGE_DOWN          &kp F1  &kp F2  &kp F3  &trans  &kp RSHFT
+&kp LSHFT  &kp LGUI      &kp LSHFT       &kp LEFT_ALT  &kp LCTRL  &mo 8        &kp PAGE_DOWN          &kp F1  &kp F2  &kp F3  &trans  &kp RSHFT
                                          &trans        &none      &kp SPACE    &mt RIGHT_SHIFT ENTER  &none   &mo 5
             >;
         };
@@ -170,10 +171,10 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-           &kp ESCAPE    &mkp LCLK       &mkp MCLK     &mkp RCLK  &kp HOME         &mkp MCLK        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP
-           &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp END          &msc SCRL_LEFT   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN
-&kp LSHFT  &none         &none           &kp INSERT    &kp PG_UP  &kp PAGE_DOWN    &msc SCRL_RIGHT  &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &kp RSHFT
-                                         &none         &none      &none            &none            &none           &trans
+           &kp ESCAPE    &mkp LCLK  &mkp MCLK     &mkp RCLK  &kp HOME    &mkp MCLK        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP
+           &none         &none      &kp PG_UP     &kp PG_DN  &kp END     &msc SCRL_LEFT   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN
+&kp LSHFT  &kp LEFT_WIN  &kp LSHFT  &kp LEFT_ALT  &kp LCTRL  &none       &msc SCRL_RIGHT  &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &kp RSHFT
+                                    &none         &none      &none       &none            &none           &trans
             >;
         };
 
