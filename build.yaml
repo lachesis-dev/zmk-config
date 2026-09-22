@@ -1,4 +1,13 @@
 include:
+  # Thorium34: the left half is the split central
+  - board: xiao_ble/nrf52840/zmk
+    shield: thorium34_left
+    artifact-name: thorium34_central_left
+
+  - board: xiao_ble/nrf52840/zmk
+    shield: thorium34_right
+    artifact-name: thorium34_peripheral_right
+
   # totem dongle (central)
   - board: xiao_ble/nrf52840/zmk
     shield: totem_dongle

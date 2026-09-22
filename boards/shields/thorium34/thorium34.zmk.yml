@@ -1,0 +1,11 @@
+file_format: "1"
+id: thorium34
+name: Thorium34
+type: shield
+url: https://github.com/lachesis-dev/zmk-config
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - thorium34_left
+  - thorium34_right
