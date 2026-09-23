@@ -6,6 +6,7 @@ url: https://github.com/lachesis-dev/zmk-config
 requires: [seeeduino_xiao_ble]
 features:
   - keys
+  - studio
 siblings:
   - thorium34_left
   - thorium34_right
