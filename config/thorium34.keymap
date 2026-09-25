@@ -119,7 +119,7 @@
         new_behavior: new_behavior {
             compatible = "zmk,behavior-sticky-key";
             label = "NEW_BEHAVIOR";
-            bindings = <&mt>;
+            bindings = <&kp LALT>;
             #binding-cells = <1>;
             release-after-ms = <0>;
         };
