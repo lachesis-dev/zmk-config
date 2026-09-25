@@ -14,29 +14,6 @@
 };
 
 / {
-
-    behaviors {
-
-        /* 汎用 Sticky Key */
-        my_sticky_style: custom_sticky_key_node {
-            compatible = "zmk,behavior-sticky-key";
-            label = "ANY_LABEL_NAME";
-            #binding-cells = <1>;
-            bindings = <&kp>;
-            release-after-ms = <1000>;
-            quick-release;
-        };
-
-        layer_or_sticky: custom_hold_tap_node {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ANY_HOLD_TAP_LABEL";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&my_sticky_style>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
