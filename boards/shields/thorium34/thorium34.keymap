@@ -14,6 +14,14 @@
 };
 
 / {
+    behaviors {
+        simple_sticky_alt: sticky_key {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>;
+            release-after-ms = <1000>;
+        };
+    };
     combos {
         compatible = "zmk,combos";
 
