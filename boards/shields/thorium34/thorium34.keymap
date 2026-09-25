@@ -15,11 +15,10 @@
 
 / {
     behaviors {
-        simple_sticky_alt: sticky_key {
-            compatible = "zmk,behavior-sticky-key";
+        simple_test: behavior_macro {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT>;
-            release-after-ms = <1000>;
+            bindings = <&kp A>;
         };
     };
     combos {
