@@ -115,26 +115,16 @@
         };
     };
 
-    behaviors {
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-sticky-key";
-            label = "NEW_BEHAVIOR";
-            bindings = <&kp LALT>;
-            #binding-cells = <1>;
-            release-after-ms = <0>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
             display-name = "BASE";
             bindings = <
-&kp Q  &kp W  &kp E  &kp R                   &kp T            &kp Y                  &kp U  &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F                   &kp G            &kp H                  &kp J  &kp K      &kp L    &kp MINUS
-&kp Z  &kp X  &kp C  &kp V                   &kp B            &kp N                  &kp M  &kp COMMA  &kp DOT  &lt 5 SLASH
-                     &new_behavior LEFT_ALT  &mt RCTRL SPACE  &mt RIGHT_SHIFT ENTER  &mo 2
+&kp Q  &kp W  &kp E  &kp R  &kp T            &kp Y                  &kp U  &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F  &kp G            &kp H                  &kp J  &kp K      &kp L    &kp MINUS
+&kp Z  &kp X  &kp C  &kp V  &kp B            &kp N                  &kp M  &kp COMMA  &kp DOT  &lt 5 SLASH
+                     &mo 1  &mt RCTRL SPACE  &mt RIGHT_SHIFT ENTER  &mo 2
             >;
         };
 
@@ -143,7 +133,7 @@
             bindings = <
 &sk LWIN      &sk LSHIFT  &sk LEFT_ALT   &sk LCTRL   &none            &kp C_AL_SCREENSAVER  &kp PAUSE_BREAK  &kp MINUS         &kp EQUAL          &none
 &kp CAPSLOCK  &kp TAB     &kp BACKSPACE  &kp ESCAPE  &kp DELETE       &kp SCROLLLOCK        &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
-&kp LWIN      &kp LSHFT   &kp LEFT_ALT   &kp LCTRL   &kp PRINTSCREEN  &none                 &none            &kp SEMICOLON     &kp SQT            &kp BACKSLASH
+&sk LWIN      &sk LSHFT   &sk LEFT_ALT   &sk LCTRL   &kp PRINTSCREEN  &none                 &none            &kp SEMICOLON     &kp SQT            &kp BACKSLASH
                                          &trans      &trans           &trans                &mo 3
             >;
         };
@@ -199,10 +189,10 @@
         num_layer {
             display-name = "NUM";
             bindings = <
-&none         &none           &kp UP_ARROW    &none            &none      &kp SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
-&none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none      &kp ASTERISK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
-&kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT    &kp LCTRL        &none      &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &tog 7
-                                              &kp TAB          &kp SPACE  &kp KP_ENTER  &none
+&none         &none           &kp UP_ARROW    &none            &none   &kp SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS
+&none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none   &kp ASTERISK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS
+&kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_ALT    &kp LCTRL        &none   &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &tog 7
+                                              &kp TAB          &trans  &trans        &trans
             >;
         };
 
