@@ -131,8 +131,8 @@
         lower_layer {
             display-name = "lower";
             bindings = <
-&sk LWIN      &sk LSHIFT  &sk LEFT_ALT   &sk LCTRL   &none            &kp C_AL_SCREENSAVER  &kp PAUSE_BREAK  &kp MINUS         &kp EQUAL          &none
-&kp CAPSLOCK  &kp TAB     &kp BACKSPACE  &kp ESCAPE  &kp DELETE       &kp SCROLLLOCK        &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
+&sk LWIN      &sk LSHIFT  &sk LEFT_ALT   &sk LCTRL   &none            &kp C_AL_SCREENSAVER  &kp PAUSE_BREAK  &kp MINUS         &kp EQUAL          &kp GRAVE
+&kp CAPSLOCK  &kp TAB     &kp BACKSPACE  &kp ESCAPE  &kp DELETE       &kp SCROLLLOCK        &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp INT_YEN
 &sk LWIN      &sk LSHFT   &sk LEFT_ALT   &sk LCTRL   &kp PRINTSCREEN  &none                 &none            &kp SEMICOLON     &kp SQT            &kp BACKSLASH
                                          &trans      &trans           &trans                &mo 3
             >;
