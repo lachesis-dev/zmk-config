@@ -45,7 +45,7 @@ layers:
   - PAUSE BREAK
   - '-'
   - '='
-  - ''
+  - '`'
   - CAPSLOCK
   - TAB
   - BACKSPACE
@@ -55,7 +55,7 @@ layers:
   - ''
   - '['
   - ']'
-  - ''
+  - INT YEN
   - {t: LWIN, h: sticky}
   - {t: LSHFT, h: sticky}
   - {t: LEFT ALT, h: sticky}
@@ -64,18 +64,18 @@ layers:
   - ''
   - ''
   - ;
-  - "'"
+  - ''''
   - \
   - {type: held}
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - rmod
   Nav:
-  - ESCAPE
+  - INSERT
   - '&mkp LCLK'
   - '&mkp MCLK'
   - '&mkp RCLK'
-  - AC HOME
+  - HOME
   - '&mkp MCLK'
   - '&mkp LCLK'
   - '&mmv MOVE_UP'
@@ -91,8 +91,8 @@ layers:
   - '&mmv MOVE_DOWN'
   - '&mmv MOVE_RIGHT'
   - '&msc SCRL_DOWN'
-  - ''
-  - ''
+  - LEFT GUI
+  - LEFT SHIFT
   - INSERT
   - PG UP
   - PAGE DOWN
@@ -102,8 +102,8 @@ layers:
   - UP
   - RIGHT
   - lmod
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   rmod:
   - Q
@@ -137,8 +137,8 @@ layers:
   - RSHFT
   - RIGHT GUI
   - {type: held}
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   lmod:
   - Q
@@ -172,8 +172,8 @@ layers:
   - .
   - /
   - {type: held}
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   func:
   - F10
@@ -199,17 +199,17 @@ layers:
   - ''
   - ''
   - ''
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - PAGE DOWN
   - F1
   - F2
   - F3
   - {type: held}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   raise:
   - '1'
   - '2'
@@ -241,9 +241,9 @@ layers:
   - RALT
   - RSHFT
   - RIGHT GUI
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   NUM:
   - ''
@@ -277,9 +277,9 @@ layers:
   - KP 3
   - {t: NUM, h: toggle}
   - TAB
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   adjust:
   - '&bootloader'
   - '&sys_reset'
