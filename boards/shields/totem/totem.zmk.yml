@@ -8,7 +8,6 @@ features:
   - keys
   - studio
 siblings:
-  - totem_dongle
   - totem_left
   - totem_right
   

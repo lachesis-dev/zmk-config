@@ -324,7 +324,7 @@ combos:
   k: Ctl+SPACE
 - p: [27, 28]
   k: .
-  l: [lmod]
+  l: [NUM]
 - p: [1, 2]
   k: '&ndq_id_macro'
   l: [lower]
