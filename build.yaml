@@ -3,12 +3,12 @@ include:
   - board: xiao_ble/nrf52840/zmk
     shield: thorium34_left
     artifact-name: thorium34snow_central_left
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Thorium34snow"
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Thorium34snow\"
 
   - board: xiao_ble/nrf52840/zmk
     shield: thorium34_left
     artifact-name: thorium34black_central_left
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Thorium34black"
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Thorium34black\"
 
   - board: xiao_ble/nrf52840/zmk
     shield: thorium34_right
